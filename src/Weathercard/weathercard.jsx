@@ -47,7 +47,7 @@ const WeatherApp = () => {
       {error && <p>{error}</p>}
 
       {weather && (
-        <div className="weather-cards">
+        <div className="weather-card">
           <div className="card">
             <h3>Temperature</h3>
             <p>{weather.temp_c}°C</p>
