@@ -56,19 +56,19 @@ const WeatherApp = () => {
 
       {weather && (
         <div className="weather-cards" data-testid="weather-cards">
-          <div className="card" data-testid="weather-card">
+          <div className="card weather-card" data-testid="weather-card">
             <h3>Temperature</h3>
             <p>{weather.temp_c}°C</p>
           </div>
-          <div className="card" data-testid="weather-card">
+          <div className="card weather-card" data-testid="weather-card">
             <h3>Humidity</h3>
             <p>{weather.humidity}%</p>
           </div>
-          <div className="card" data-testid="weather-card">
+          <div className="card weather-card" data-testid="weather-card">
             <h3>Condition</h3>
             <p>{weather.condition.text}</p>
           </div>
-          <div className="card" data-testid="weather-card">
+          <div className="card weather-card" data-testid="weather-card">
             <h3>Wind Speed</h3>
             <p>{weather.wind_kph} kph</p>
           </div>
