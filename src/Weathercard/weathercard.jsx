@@ -18,11 +18,13 @@ const WeatherApp = () => {
 
     try {
       const response = await fetch(
-      `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`
+        `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`
       );
       if (!response.ok) throw new Error("Failed to fetch weather data");
 
       const data = await response.json();
+      if (!data || !data.current) throw new Error("Incomplete data");
+
       setWeather(data.current);
     } catch (err) {
       setError("Failed to fetch weather data");
@@ -39,28 +41,31 @@ const WeatherApp = () => {
           value={city}
           onChange={(e) => setCity(e.target.value)}
           placeholder="Enter city name"
+          data-testid="city-input"
         />
-        <button onClick={handleSearch}>Search</button>
+        <button onClick={handleSearch} data-testid="search-button">
+          Search
+        </button>
       </div>
 
-      {loading && <p>Loading data...</p>}
-      {error && <p>{error}</p>}
+      {loading && <p data-testid="loading">Loading data...</p>}
+      {error && <p data-testid="error">{error}</p>}
 
       {weather && (
-        <div className="weather-card">
-          <div className="card">
+        <div className="weather-cards" data-testid="weather-cards">
+          <div className="card" data-testid="weather-card">
             <h3>Temperature</h3>
             <p>{weather.temp_c}°C</p>
           </div>
-          <div className="card">
+          <div className="card" data-testid="weather-card">
             <h3>Humidity</h3>
             <p>{weather.humidity}%</p>
           </div>
-          <div className="card">
+          <div className="card" data-testid="weather-card">
             <h3>Condition</h3>
             <p>{weather.condition.text}</p>
           </div>
-          <div className="card">
+          <div className="card" data-testid="weather-card">
             <h3>Wind Speed</h3>
             <p>{weather.wind_kph} kph</p>
           </div>
