@@ -1,66 +1,86 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #eaf5ff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .weather-container {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     text-align: center;
-    padding: 40px 20px;
+    width: 90%;
+    max-width: 600px;
   }
   
   .search-bar {
     display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
     gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
   }
   
   .search-bar input {
     padding: 10px;
-    width: 250px;
+    border: none;
+    border-radius: 8px;
+    width: 60%;
     font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
   }
   
   .search-bar button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #4caf50;
+    padding: 10px 16px;
+    background-color: #4a90e2;
     color: white;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
+    font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.2s ease;
   }
   
-  .weather-cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
+  .search-bar button:hover {
+    background-color: #357ab8;
+  }
+  
+  .weather-card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 20px;
   }
   
   .card {
-    background-color: white;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 180px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(6px);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    color: #333;
+    transition: transform 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-4px);
   }
   
   .card h3 {
-    margin: 0 0 10px 0;
+    margin: 0 0 8px;
     font-size: 18px;
-    color: #333;
+    color: #4a4a4a;
   }
   
   .card p {
     margin: 0;
-    font-size: 16px;
-    font-weight: 500;
-    color: black; /* Add this line */
+    font-size: 20px;
+    font-weight: bold;
+    color: #222;
   }
-  
   
