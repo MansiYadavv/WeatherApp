@@ -18,7 +18,7 @@ const WeatherApp = () => {
 
     try {
       const response = await fetch(
-        `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`
+      `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`
       );
       if (!response.ok) throw new Error("Failed to fetch weather data");
 
