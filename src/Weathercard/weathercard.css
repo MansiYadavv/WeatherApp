@@ -9,7 +9,6 @@ body {
     text-align: center;
     padding: 40px 20px;
     align-items: center;
-   
   }
   
   .search-bar {
@@ -17,8 +16,6 @@ body {
     justify-content: center;
     margin-bottom: 30px;
     gap: 10px;
-  
-   
   }
   
   .search-bar input {
@@ -27,7 +24,6 @@ body {
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 6px;
-   
   }
   
   .search-bar button {
@@ -55,6 +51,7 @@ body {
     width: 180px;
   }
   
+  /* Card heading and paragraph styling */
   .card h3 {
     margin: 0 0 10px 0;
     font-size: 18px;
@@ -66,5 +63,62 @@ body {
     font-size: 16px;
     font-weight: 500;
     color: black;
+  }
+  
+  /* Responsive adjustments */
+  
+  /* Mobile screens */
+  @media (max-width: 480px) {
+    .search-bar input {
+      width: 180px;
+      font-size: 14px;
+    }
+  
+    .search-bar button {
+      font-size: 14px;
+    }
+  
+    .weather-cards {
+      gap: 20px;
+    }
+  
+    .card {
+      width: 150px;
+      padding: 20px;
+    }
+  
+    .card h3 {
+      font-size: 16px;
+    }
+  
+    .card p {
+      font-size: 14px;
+    }
+  }
+  
+  /* Tablet screens */
+  @media (max-width: 768px) {
+    .search-bar input {
+      width: 220px;
+    }
+  
+    .weather-cards {
+      gap: 25px;
+    }
+  
+    .card {
+      width: 170px;
+    }
+  }
+  
+  /* Larger screens (Desktop) */
+  @media (min-width: 1024px) {
+    .search-bar input {
+      width: 300px;
+    }
+  
+    .card {
+      width: 200px;
+    }
   }
   

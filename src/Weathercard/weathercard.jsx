@@ -23,11 +23,14 @@ const WeatherApp = () => {
       if (!response.ok) throw new Error("Failed to fetch weather data");
 
       const data = await response.json();
+      console.log("Fetched data:", data); // Debugging log
+
       if (!data || !data.current) throw new Error("Incomplete data");
 
       setWeather(data.current);
     } catch (err) {
       setError("Failed to fetch weather data");
+      console.error("Error:", err);
     } finally {
       setLoading(false);
     }
